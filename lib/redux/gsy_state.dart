@@ -13,6 +13,9 @@ import 'package:redux/redux.dart';
  * Date: 2018-07-16
  */
 
+  ///关于[State]
+
+
 ///全局Redux store 的对象，保存State数据
 class GSYState {
   ///用户信息
@@ -50,7 +53,7 @@ GSYState appReducer(GSYState state, action) {
     login: LoginReducer(state.login, action),
   );
 }
-
+//增加需要拦截的 middleware
 final List<Middleware<GSYState>> middleware = [
   EpicMiddleware<GSYState>(UserInfoEpic()),
   EpicMiddleware<GSYState>(LoginEpic()),

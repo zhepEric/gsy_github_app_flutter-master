@@ -152,7 +152,7 @@ class _GSYNestedPullLoadWidgetState extends State<GSYNestedPullLoadWidget> {
         ? new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-                ///loading框
+                ///loading框架
                 new SpinKitRotatingCircle(
                     color: Theme.of(context).primaryColor),
                 new Container(

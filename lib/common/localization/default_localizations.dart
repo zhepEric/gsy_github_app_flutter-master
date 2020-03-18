@@ -5,7 +5,7 @@ import 'package:gsy_github_app_flutter/common/localization/gsy_string_base.dart'
 import 'package:gsy_github_app_flutter/common/localization/gsy_string_en.dart';
 import 'package:gsy_github_app_flutter/common/localization/gsy_string_zh.dart';
 
-///自定义多语言实现
+///自定义多语言实现,主要分三部：实现LocalizationsDelegate、实现Localizations 、通过 Store 的 Locale 切换语言。
 class GSYLocalizations {
   final Locale locale;
 
@@ -34,6 +34,7 @@ class GSYLocalizations {
   ///通过 Localizations 加载当前的 GSYLocalizations
   ///获取对应的 GSYStringBase
   static GSYStringBase i18n(BuildContext context) {
+    ///可以通过Localizations.of 获取 GSYLocalizations
     return (Localizations.of(context, GSYLocalizations) as GSYLocalizations)
         .currentLocalized;
   }

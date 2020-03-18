@@ -19,6 +19,7 @@ class GSYLocalizationsDelegate extends LocalizationsDelegate<GSYLocalizations> {
     return true;
   }
 
+  ///主要是重写load方法
   ///根据locale，创建一个对象用于提供当前locale下的文本显示
   @override
   Future<GSYLocalizations> load(Locale locale) {

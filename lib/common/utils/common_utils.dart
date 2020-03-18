@@ -171,6 +171,7 @@ class CommonUtils {
     return fullName;
   }
 
+  //更新主题
   static pushTheme(Store store, int index) {
     ThemeData themeData;
     List<Color> colors = getThemeListColor();

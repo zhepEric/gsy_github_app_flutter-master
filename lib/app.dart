@@ -115,13 +115,15 @@ mixin HttpErrorListener on State<FlutterReduxApp> {
   @override
   void dispose() {
     super.dispose();
+
+    //解除绑定，防止内存泄漏
     if (stream != null) {
       stream.cancel();
       stream = null;
     }
   }
 
-  ///网络错误提醒
+  ///全局网络错误提醒
   errorHandleFunction(int code, message) {
     switch (code) {
       case Code.NETWORK_ERROR:

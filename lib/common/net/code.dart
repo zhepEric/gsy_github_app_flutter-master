@@ -18,6 +18,7 @@ class Code {
     if (noTip) {
       return message;
     }
+///EventBus发送事件
     eventBus.fire(new HttpErrorEvent(code, message));
     return message;
   }

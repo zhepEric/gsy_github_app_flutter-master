@@ -24,7 +24,11 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
+/**
+ * 在 TabBar  页面中，一般还会出现：父页面需要控制 PageView 中子页的需求，这时候就需要用到GlobalKey了，
+ * 比如 GlobalKey<PageOneState> stateOne = new GlobalKey<PageOneState>();
+ * 通过 globalKey.currentState.xxx() 对象，你就可以调用到 PageOneState 中的公开方法，这里需要注意 GlobalKey 实例需要全局唯一。
+ */
 class _HomePageState extends State<HomePage> {
   final GlobalKey<DynamicPageState> dynamicKey = new GlobalKey();
   final GlobalKey<TrendPageState> trendKey = new GlobalKey();
@@ -90,7 +94,7 @@ class _HomePageState extends State<HomePage> {
           }
         },
         backgroundColor: GSYColors.primarySwatch,
-        indicatorColor: GSYColors.white,
+        indicatorColor: Colors.transparent, //设置透明隐藏底部导航条
         title: GSYTitleBar(
           GSYLocalizations.of(context).currentLocalized.app_name,
           iconData: GSYICons.MAIN_SEARCH,

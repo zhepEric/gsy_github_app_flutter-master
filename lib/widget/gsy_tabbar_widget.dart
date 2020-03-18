@@ -103,6 +103,8 @@ class _GSYTabBarState extends State<GSYTabBarWidget>
     widget.onDoublePress?.call(index);
   }
 
+  ///底部tab是放在了 Scaffold 的 bottomNavigationBar 中。
+  ///顶部tab是放在 AppBar 的 bottom 中，也就是标题栏之下。
   @override
   Widget build(BuildContext context) {
     if (widget.type == TabType.top) {
@@ -116,6 +118,7 @@ class _GSYTabBarState extends State<GSYTabBarWidget>
         appBar: new AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           title: widget.title,
+          //顶部导航栏放在bottom属性
           bottom: new TabBar(
               controller: _tabController,
               tabs: widget.tabItems,
@@ -153,9 +156,9 @@ class _GSYTabBarState extends State<GSYTabBarWidget>
               controller: _tabController,
               //配置控制器
               tabs: widget.tabItems,
-              indicatorColor: widget.indicatorColor,
+              indicatorColor: widget.indicatorColor,//tab标签的下划线颜色
               onDoubleTap: _navigationDoubleTapClick,
-              onTap: _navigationTapClick, //tab标签的下划线颜色
+              onTap: _navigationTapClick,
             ),
           ),
         ));

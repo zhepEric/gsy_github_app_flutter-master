@@ -18,6 +18,7 @@ class _DemoPageState extends State<DemoPage> {
       appBar: new AppBar(
         ///这个title是一个Widget
         title: new Text("Title"),
+
       ),
       ///正式的页面开始
       ///一个ListView，20个Item

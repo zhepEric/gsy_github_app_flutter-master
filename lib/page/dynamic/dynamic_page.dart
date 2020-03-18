@@ -22,7 +22,9 @@ class DynamicPage extends StatefulWidget {
   @override
   DynamicPageState createState() => DynamicPageState();
 }
-
+/**
+ * WidgetsBindingObserver 包含了各种控件的生命周期通知，其中的 didChangeAppLifecycleState 就可以用于做前后台状态监听。
+ */
 class DynamicPageState extends State<DynamicPage>
     with AutomaticKeepAliveClientMixin<DynamicPage>, WidgetsBindingObserver {
   final DynamicBloc dynamicBloc = new DynamicBloc();
@@ -126,6 +128,7 @@ class DynamicPageState extends State<DynamicPage>
     }
   }
 
+///  通过with AutomaticKeepAliveClientMixin ，然后重写 @override bool get wantKeepAlive => true; ，就可以实不重新构建的效果
   @override
   bool get wantKeepAlive => true;
 

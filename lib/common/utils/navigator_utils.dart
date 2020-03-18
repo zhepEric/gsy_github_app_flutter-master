@@ -24,6 +24,8 @@ import 'package:gsy_github_app_flutter/page/user_profile_page.dart';
 
 /**
  * 导航栏
+ * Navigator 的 push 返回的是一个 Future，这个Future 的作用是在页面返回时被调用的。
+ * 也就是你可以通过 Navigator 的 pop 时返回参数，之后在 Future 中可以的监听中处理页面的返回结果。
  * Created by guoshuyu
  * Date: 2018-07-16
  */
@@ -55,6 +57,10 @@ class NavigatorUtils {
 //    }
   }
 
+  ///跳转到新的路由，并且关闭给定路由的之前的所有页面
+//  Navigator.pushNamedAndRemoveUntil(context, '/calendar', ModalRoute.withName('/'));
+
+
   ///切换无参数页面
   static pushNamed(BuildContext context, String routeName) {
     Navigator.pushNamed(context, routeName);
@@ -67,6 +73,7 @@ class NavigatorUtils {
 
   ///登录页
   static goLogin(BuildContext context) {
+    ///跳转新页面并且替换
     Navigator.pushReplacementNamed(context, LoginPage.sName);
   }
 

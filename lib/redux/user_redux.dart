@@ -8,8 +8,17 @@ import 'package:rxdart/rxdart.dart';
 
 /**
  * 用户相关Redux
+ * 比如把用户信息存储在 redux 的 store 中，
+ * 好处在于: 比如某个页面修改了当前用户信息，所有绑定的该 State 的控件将由 Redux 自动同步修改，State 可以跨页面共享。
  * Created by guoshuyu
  * Date: 2018-07-16
+ */
+
+/**
+ * redux 中主要引入了 action、reducer、store 概念。
+ * action 用于定义一个数据变化的请求。
+ * reducer 用于根据 action 产生新状态
+ * store 用于存储和管理 state，监听 action，将 action 自动分配给 reducer 并根据 reducer 的执行结果更新 state。
  */
 
 /// redux 的 combineReducers, 通过 TypedReducer 将 UpdateUserAction 与 reducers 关联起来
