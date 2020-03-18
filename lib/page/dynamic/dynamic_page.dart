@@ -11,6 +11,8 @@ import 'package:gsy_github_app_flutter/widget/gsy_event_item.dart';
 import 'package:gsy_github_app_flutter/widget/pull/gsy_pull_new_load_widget.dart';
 import 'package:redux/redux.dart';
 
+import '../../common/utils/log_utils.dart';
+
 /**
  * 主页动态tab页
  * Created by guoshuyu
@@ -123,7 +125,9 @@ class DynamicPageState extends State<DynamicPage>
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
       if (dynamicBloc.getDataLength() != 0) {
-        showRefreshLoading();
+
+        LogUtil.i("DYNAMIC_PAGE", "-----didChangeAppLifecycleState----");
+//        showRefreshLoading();
       }
     }
   }

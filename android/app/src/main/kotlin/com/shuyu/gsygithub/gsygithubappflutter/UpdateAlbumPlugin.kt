@@ -30,7 +30,7 @@ object UpdateAlbumPlugin {
                 context.sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://$path")))
             }
         }
-        result.success(null) //没有返回值，所以直接返回为null
+        result.success(null) //没有返回值，所以直接返回为null 给Flutter
     }
 
 }

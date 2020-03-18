@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 /// 带图标的输入框
 class GSYInputWidget extends StatefulWidget {
@@ -31,6 +32,8 @@ class GSYInputWidget extends StatefulWidget {
 /// State for [GSYInputWidget] widgets.
 class _GSYInputWidgetState extends State<GSYInputWidget> {
 
+  ContainerRenderObjectMixin s;
+  RenderBoxContainerDefaultsMixin ss;
   @override
   Widget build(BuildContext context) {
     return new TextField(

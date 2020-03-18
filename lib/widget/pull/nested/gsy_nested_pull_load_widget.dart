@@ -58,7 +58,7 @@ class _GSYNestedPullLoadWidgetState extends State<GSYNestedPullLoadWidget> {
         return 1;
       }
 
-      ///如果有数据,因为部加载更多选项，需要对列表数据总数+1
+      ///如果有数据,因为不加载更多选项，需要对列表数据总数+1
       return (widget.control.dataList.length > 0)
           ? widget.control.dataList.length + 1
           : widget.control.dataList.length;

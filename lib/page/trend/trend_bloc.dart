@@ -5,6 +5,7 @@ import 'package:rxdart/rxdart.dart';
 /**
  * Created by guoshuyu
  * on 2019/3/23.
+ * 结合Rxdart库实现Bloc模式
  */
 class TrendBloc {
   bool _requested = false;
@@ -17,7 +18,7 @@ class TrendBloc {
   ///是否已经请求过
   bool get requested => _requested;
 
-  ///rxdart 实现的 stream
+  ///rxdart 实现的 stream,相当于StreamController
   var _subject = PublishSubject<List<TrendingRepoModel>>();
 
   Observable<List<TrendingRepoModel>> get stream => _subject.stream;
@@ -28,7 +29,8 @@ class TrendBloc {
     //_subject.add([]);
     var res = await ReposDao.getTrendDao(since: selectTime.value, languageType: selectType.value);
     if (res != null && res.result) {
-      _subject.add(res.data);
+//      _subject.add(res.data);
+      _subject.sink.add(res.data);
     }
     await doNext(res);
     _isLoading = false;

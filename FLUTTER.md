@@ -1,3 +1,5 @@
+
+响应式编程（第三方库rxdart）
 一、Stream
 1、在Dart库中，有两种实现异步编程的方式（Future和Stream），使用它们只需要在代码中引入dart:async即可。
 为了控制Stream，我们通常可以使用StreamController来进行管理；
@@ -9,6 +11,17 @@ StreamController提供stream属性作为数据的出口。
 
 
 二、Bloc设计模式
-BLoC 是独立处理业务逻辑，网络数据请求等等逻辑的一个模块，通过流的 Sinks, Streams 发布监听业务处理后的数据结果，其只关心业务处理。
+1、BLoC 是独立处理业务逻辑，网络数据请求等等逻辑的一个模块，通过流的 Sinks, Streams 发布监听业务处理后的数据结果，其只关心业务处理。
 每个bloc负责页面数据处理、事件处理
 一个页面可能有多个bloc
+2、Bloc模式有助于解耦业务逻辑代码与Widget显示，方便测试
+
+3、Bloc模式可以结合 Stream 实现或者借助三方库Rxdart
+Stream + StreamController
+
+Rxdart : Observable + Subject
+
+
+三、InheritedWidget 使用
+
+

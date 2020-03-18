@@ -69,6 +69,7 @@ class _FlutterReduxAppState extends State<FlutterReduxApp>
 
             ///命名式路由
             /// "/" 和 MaterialApp 的 home 参数一个效果
+
             routes: {
               WelcomePage.sName: (context) {
                 _context = context;

@@ -156,7 +156,7 @@ class _SearchPageState extends State<SearchPage>
             (String type) {
               ///排序类型
               searchBLoC.type = type;
-              Navigator.pop(context);
+              Navigator.pop(context,"result");
               _resolveSelectIndex();
             },
             (String sort) {
