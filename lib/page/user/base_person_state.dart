@@ -210,6 +210,8 @@ abstract class BasePersonState<T extends StatefulWidget> extends State<T>
 }
 
 /// Provider  HonorModel
+/// Consumer:它本身是一个 StatelessWidget , 只是在 build 中通过 Provider.of<T>(context) 帮你获取到 InheritedWidget 共享的 value
+/// InheritedProvider:状态共享肯定需要 InheritedWidget ，InheritedProvider 就是InheritedWidget 的子类，所有的 Provider 实现都在 build 方法中使用 InheritedProvider 进行嵌套，实现 value 的共享
 class HonorModel extends ChangeNotifier {
   int _beStaredCount;
 
@@ -217,7 +219,7 @@ class HonorModel extends ChangeNotifier {
 
   set beStaredCount(int value) {
     _beStaredCount = value;
-    notifyListeners();
+    notifyListeners();// 触发更新,最终触发 setState 更新
   }
 
   List _honorList;

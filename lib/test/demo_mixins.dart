@@ -70,8 +70,10 @@ testMixins() {
 ///I/flutter (13627): A.a()
 ///I/flutter (13627): B.a()
 ///I/flutter (13627): base a()
+
 ///I/flutter (13627): A.b()
 ///I/flutter (13627): B.b()
 ///I/flutter (13627): base b()
+
 ///I/flutter (13627): B.c()
 ///I/flutter (13627): base c()

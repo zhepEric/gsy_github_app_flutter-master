@@ -181,6 +181,7 @@ class _RepositoryDetailPageState extends State<RepositoryDetailPage>
     super.initState();
 
     ///仓库的详情数据实体
+    ///3、在顶层创建ReposDetailModel实例
     reposDetailModel ??= new ReposDetailModel(
         userName: widget.userName, reposName: widget.reposName);
 
@@ -195,8 +196,13 @@ class _RepositoryDetailPageState extends State<RepositoryDetailPage>
   @override
   Widget build(BuildContext context) {
     ///跨 tab 共享状态
+    ///3、ScopedModel<T extends Model>是一个StatelessWidget，它接收一个model，并提供给需要它的所有部件。
     return new ScopedModel<ReposDetailModel>(
+      ///3、将ScopedModel<T extends Model>的model属性绑定我们的ReposDetailModel对象。
       model: reposDetailModel,
+      /// scoped_model提供了两种方式在子页面中获取model。
+      /// 第一种采用ScopedModelDescendant
+      /// 第二种获取model的方式——使用ScopedModel.of
       child: new ScopedModelDescendant<ReposDetailModel>(
         builder: (context, child, model) {
           Widget widgetContent =

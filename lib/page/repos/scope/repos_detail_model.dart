@@ -6,9 +6,13 @@ import 'package:gsy_github_app_flutter/model/RepositoryQL.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import '../repository_detail_page.dart';
-
+///model_scope 状态管理
 ///仓库详情数据实体，包含有当前index，仓库数据，分支等等
+///2、在Scoped中，Model是一个只包含与状态相关信息的单位。我们应该把状态数据与操作数据的方法抽象出来封装到Model中。
+///由于Model必须继承至Model类，所以它就具有了侵入性。
 class ReposDetailModel extends Model {
+
+  //重写ScopedModel.of
   static ReposDetailModel of(BuildContext context) =>
       ScopedModel.of<ReposDetailModel>(context);
 
@@ -35,7 +39,8 @@ class ReposDetailModel extends Model {
 
   set repository(RepositoryQL data) {
     _repository = data;
-    notifyListeners();
+    ///采用了观察者模式，
+    notifyListeners();//状态发生改变时调用该方法更新
   }
 
   int get currentIndex => _currentIndex;
